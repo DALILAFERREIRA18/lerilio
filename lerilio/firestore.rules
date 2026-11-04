@@ -1,0 +1,30 @@
+// Regras do banco de dados (Firebase Firestore) do Lerílio
+// © 2026 Dalila Cristina Ferreira. Todos os direitos reservados.
+//
+// O que estas regras fazem:
+// - Permitem APENAS criar registros de acesso na coleção "acessos".
+// - Cada registro só pode ter: nome (até 30 letras), dataHora e registradoEm.
+// - Ninguém consegue ler, alterar ou apagar registros pelo app (RNF10).
+//   Você vê os registros pelo console do Firebase.
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /acessos/{registro} {
+      allow create: if request.resource.data.keys().hasOnly(['nome', 'dataHora', 'registradoEm'])
+                    && request.resource.data.keys().hasAll(['nome', 'dataHora', 'registradoEm'])
+                    && request.resource.data.nome is string
+                    && request.resource.data.nome.size() > 0
+                    && request.resource.data.nome.size() <= 30
+                    && request.resource.data.dataHora == request.time
+                    && request.resource.data.registradoEm is timestamp;
+      allow read, update, delete: if false;
+    }
+
+    // Qualquer outra coleção fica bloqueada.
+    match /{documento=**} {
+      allow read, write: if false;
+    }
+  }
+}

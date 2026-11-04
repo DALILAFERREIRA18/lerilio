@@ -1,0 +1,110 @@
+/* Lerílio — estilos gerais
+   © 2026 Dalila Cristina Ferreira. Todos os direitos reservados.
+   As cores seguem o "Guia de estilo para o front-end" do documento do projeto. */
+
+:root {
+  --fundo: #FBF9FE;
+  --superficie: #FFFFFF;
+  --texto: #24203A;
+  --texto-secundario: #4A4660;
+  --borda: #D9D3E8;
+  --lilas: #5B3FB0;
+  --lilas-escuro: #3A2A78;
+  --lilas-claro: #EEE8FA;
+  --remedios: #2E7D4F;
+  --registrado: #1F5E3A;
+  --consultas: #2563A8;
+  --emergencia: #B91C1C;
+  --emergencia-texto: #991B1B;
+  --emergencia-fundo: #FDF1F1;
+  --ajustes: #4B5563;
+  --pendente-fundo: #FDF3D6;
+  --pendente-borda: #C99A1E;
+  --pendente-texto: #5C4300;
+  --erro: #92400E;
+  --erro-borda: #B45309;
+
+  /* Tamanho base da letra. Ajustes (A− e A+) vão mudar este valor. */
+  --tamanho-base: 20px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  font-size: var(--tamanho-base);
+  line-height: 1.4;
+}
+
+.tela {
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 { margin: 0; font-size: 1.5em; font-weight: 800; }
+
+/* Texto de apoio: nunca menor que 18 px (RNF01). */
+.apoio { margin: 0; font-size: max(18px, 0.9em); color: var(--texto-secundario); }
+
+/* Botão principal (lilás). Área de toque grande (RNF05). */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--lilas);
+  color: #FFFFFF;
+  font: inherit;
+  font-size: 1.15em;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Botão de contorno (Cancelar, Lembrar mais tarde...). */
+.botao-contorno {
+  background: var(--superficie);
+  color: var(--texto);
+  border: 2px solid var(--texto-secundario);
+}
+
+/* Botão Ouvir: sempre com ícone e texto (RNF14). */
+.botao-ouvir {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--lilas);
+  border-radius: 24px;
+  background: var(--superficie);
+  color: var(--lilas-escuro);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Foco bem visível para quem navega pelo teclado ou leitor de tela. */
+:focus-visible { outline: 4px solid var(--lilas); outline-offset: 3px; }
+
+.mensagem {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--superficie);
+  border: 2px solid var(--borda);
+  font-size: 18px;
+}
