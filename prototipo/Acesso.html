@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- Protótipo do Lerílio — © 2026 Dalila Cristina Ferreira. Todos os direitos reservados. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Lerílio — Primeiro acesso</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF9FE}
+a{color:#3A2A78}a:hover{color:#24203A}
+</style>
+
+<div class="tela" style="margin: 0 auto; max-width: 100%; width: 390px; min-height: 844px; height: auto; box-sizing: border-box; padding: 24px 20px 32px; display: flex; flex-direction: column; gap: 20px; background: #FBF9FE; font-family: 'Nunito', 'Trebuchet MS', sans-serif; color: #24203A">
+<div style="display: flex; justify-content: flex-end">
+<button type="button" style="display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 2px solid #5B3FB0; border-radius: 24px; background: #FFFFFF; color: #3A2A78; font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 18px; font-weight: 700; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 6a8.5 8.5 0 0 1 0 12"></path></svg>Ouvir</button>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; margin-top: 8px">
+<img src="leri.png" alt="Leri, a assistente do Lerílio" style="width: 140px; height: 140px; border-radius: 70px; object-fit: cover; border: 4px solid #EEE8FA">
+<h1 style="margin: 0; font-size: 30px; font-weight: 800; line-height: 1.2">Olá! Eu sou a Leri.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.4; color: #4A4660">Vou te ajudar a lembrar dos remédios e das consultas.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px">
+<label for="nome" style="font-size: 21px; font-weight: 800">Como você quer ser chamado?</label>
+<input id="nome" type="text" placeholder="Seu primeiro nome" autocomplete="given-name" style="min-height: 60px; box-sizing: border-box; padding: 0 18px; border: 2px solid #4A4660; border-radius: 14px; background: #FFFFFF; font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 22px; color: #24203A">
+<p style="margin: 0; font-size: 17px; color: #4A4660">Só o primeiro nome. Não precisa de senha.</p>
+<p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 17px; color: #4A4660"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><rect x="9" y="3.5" width="6" height="11" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"></path></svg>Pode falar: toque no microfone do teclado.</p>
+</div>
+<a href="Termo.html" style="display: flex; align-items: center; justify-content: center; min-height: 64px; margin-top: auto; border-radius: 18px; background: #5B3FB0; color: #FFFFFF; font-size: 24px; font-weight: 800; text-decoration: none">Continuar</a>
+</div>
+
+
+<script>
+// Protótipo do Lerílio — © 2026 Dalila Cristina Ferreira. Todos os direitos reservados.
+// Faz o botão Ouvir ler a tela em voz alta.
+document.querySelectorAll('button').forEach(function (b) {
+  if (b.textContent.indexOf('Ouvir') === -1) return;
+  b.addEventListener('click', function () {
+    if (!('speechSynthesis' in window)) return;
+    var s = window.speechSynthesis;
+    if (s.speaking) { s.cancel(); return; }
+    var texto = document.querySelector('.tela').innerText.replace(/Voltar|Ouvir de novo|Ouvir o termo|Ouvir/g, '');
+    var f = new SpeechSynthesisUtterance(texto);
+    f.lang = 'pt-BR'; f.rate = 0.9;
+    setTimeout(function () { s.resume(); s.speak(f); }, 150);
+  });
+});
+</script>
+</body>
+</html>

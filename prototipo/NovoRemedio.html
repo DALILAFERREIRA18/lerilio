@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Protótipo do Lerílio — © 2026 Dalila Cristina Ferreira. Todos os direitos reservados. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Lerílio — Novo remédio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF9FE}
+a{color:#3A2A78}a:hover{color:#24203A}
+</style>
+
+<div class="tela" style="margin: 0 auto; max-width: 100%; width: 390px; min-height: 844px; height: auto; box-sizing: border-box; padding: 24px 20px 32px; display: flex; flex-direction: column; gap: 20px; background: #FBF9FE; font-family: 'Nunito', 'Trebuchet MS', sans-serif; color: #24203A">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<a href="Remedios.html" style="display: flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px 0 10px; border-radius: 24px; background: #EEE8FA; color: #3A2A78; font-size: 18px; font-weight: 700; text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>Voltar</a>
+<button type="button" style="display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 2px solid #5B3FB0; border-radius: 24px; background: #FFFFFF; color: #3A2A78; font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 18px; font-weight: 700; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 6a8.5 8.5 0 0 1 0 12"></path></svg>Ouvir</button>
+</div>
+<h1 style="margin: 0; font-size: 30px; font-weight: 800">Novo remédio</h1>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<label for="nome-remedio" style="font-size: 21px; font-weight: 800">Nome do remédio</label>
+<input id="nome-remedio" type="text" placeholder="Ex.: Remédio de teste A" aria-describedby="erro-nome" style="min-height: 60px; box-sizing: border-box; padding: 0 18px; border: 3px solid #B45309; border-radius: 14px; background: #FFFFFF; font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 22px; color: #24203A">
+<p id="erro-nome" style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: #92400E"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5M12 16.5v.01"></path></svg>Digite o nome do remédio.</p>
+<p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 17px; color: #4A4660"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><rect x="9" y="3.5" width="6" height="11" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"></path></svg>Pode falar: toque no microfone do teclado.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<label for="horario" style="font-size: 21px; font-weight: 800">Horário</label>
+<input id="horario" type="time" value="20:00" style="min-height: 60px; box-sizing: border-box; padding: 0 18px; border: 2px solid #4A4660; border-radius: 14px; background: #FFFFFF; font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 22px; color: #24203A">
+</div>
+<button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border: 2px dashed #5B3FB0; border-radius: 14px; background: #FFFFFF; color: #3A2A78; font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 19px; font-weight: 700; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>Foto da caixa (opcional)</button>
+<p style="margin: 0; font-size: 17px; line-height: 1.4; color: #4A4660">Nos testes, use nomes fictícios, como “Remédio de teste A”.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: auto">
+<a href="Remedios.html" style="display: flex; align-items: center; justify-content: center; min-height: 64px; border-radius: 18px; background: #5B3FB0; color: #FFFFFF; font-size: 24px; font-weight: 800; text-decoration: none">Salvar</a>
+<a href="Remedios.html" style="display: flex; align-items: center; justify-content: center; min-height: 60px; border-radius: 18px; border: 2px solid #4A4660; background: #FFFFFF; color: #24203A; font-size: 21px; font-weight: 700; text-decoration: none">Cancelar</a>
+</div>
+</div>
+
+
+<script>
+// Protótipo do Lerílio — © 2026 Dalila Cristina Ferreira. Todos os direitos reservados.
+// Faz o botão Ouvir ler a tela em voz alta.
+document.querySelectorAll('button').forEach(function (b) {
+  if (b.textContent.indexOf('Ouvir') === -1) return;
+  b.addEventListener('click', function () {
+    if (!('speechSynthesis' in window)) return;
+    var s = window.speechSynthesis;
+    if (s.speaking) { s.cancel(); return; }
+    var texto = document.querySelector('.tela').innerText.replace(/Voltar|Ouvir de novo|Ouvir o termo|Ouvir/g, '');
+    var f = new SpeechSynthesisUtterance(texto);
+    f.lang = 'pt-BR'; f.rate = 0.9;
+    setTimeout(function () { s.resume(); s.speak(f); }, 150);
+  });
+});
+</script>
+</body>
+</html>
