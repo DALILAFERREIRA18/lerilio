@@ -50,5 +50,16 @@ document.querySelectorAll('button').forEach(function (b) {
   });
 });
 </script>
+<script>
+// Guarda o nome digitado para mostrar na tela inicial (só neste aparelho).
+(function () {
+  var campo = document.getElementById('nome');
+  var continuar = document.querySelector('a[href="Termo.html"]');
+  try { var salvo = localStorage.getItem('lerilio-prototipo-nome'); if (salvo) campo.value = salvo; } catch (e) {}
+  continuar.addEventListener('click', function () {
+    try { localStorage.setItem('lerilio-prototipo-nome', campo.value.trim().slice(0, 30)); } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
