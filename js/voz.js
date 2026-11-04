@@ -12,8 +12,8 @@ export function vozDisponivel() {
 // Procura uma voz em português (a lista pode demorar a carregar).
 function vozEmPortugues() {
   return window.speechSynthesis
-    .getVoices()
-    .find((voz) => voz.lang && voz.lang.toLowerCase().startsWith('pt'));
+      .getVoices()
+      .find((voz) => voz.lang && voz.lang.toLowerCase().startsWith('pt'));
 }
 
 // Fala o texto em português. Devolve false se o aparelho não tiver voz.
