@@ -22,7 +22,7 @@ a{color:#3A2A78}a:hover{color:#24203A}
 <div style="display: flex; align-items: center; gap: 16px">
 <img src="leri.png" alt="Leri, a assistente do Lerílio" style="width: 88px; height: 88px; border-radius: 44px; object-fit: cover; border: 3px solid #EEE8FA">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h1 style="margin: 0; font-size: 28px; font-weight: 800; line-height: 1.15">Olá, [Nome]!</h1>
+<h1 style="margin: 0; font-size: 28px; font-weight: 800; line-height: 1.15" id="saudacao">Olá!</h1>
 <p style="margin: 0; font-size: 18px; color: #4A4660">Sua amiga do dia a dia.</p>
 </div>
 </div>
@@ -55,6 +55,15 @@ document.querySelectorAll('button').forEach(function (b) {
     setTimeout(function () { s.resume(); s.speak(f); }, 150);
   });
 });
+</script>
+<script>
+// Mostra o nome digitado no primeiro acesso.
+(function () {
+  try {
+    var nome = localStorage.getItem('lerilio-prototipo-nome');
+    if (nome) document.getElementById('saudacao').textContent = 'Olá, ' + nome + '!';
+  } catch (e) {}
+})();
 </script>
 </body>
 </html>
