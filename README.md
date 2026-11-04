@@ -9,7 +9,7 @@ em Banco de Dados do Centro Universitário Internacional UNINTER.
 
 ## Como testar
 
-Abra o link do GitHub Pages no celular: `https://SEU-USUARIO.github.io/lerilio/`
+Abra o link do GitHub Pages no celular: `https://dalilaferreira18.github.io/lerilio/`
 (substitua pelo link real depois de publicar). Não é preciso instalar nada.
 
 Nos testes, use apenas dados fictícios, como "Remédio de teste A".
