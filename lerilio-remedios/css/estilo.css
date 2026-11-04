@@ -1,0 +1,239 @@
+/* Lerílio — estilos gerais
+   © 2026 Dalila Cristina Ferreira. Todos os direitos reservados.
+   As cores seguem o "Guia de estilo para o front-end" do documento do projeto. */
+
+:root {
+  --fundo: #FBF9FE;
+  --superficie: #FFFFFF;
+  --texto: #24203A;
+  --texto-secundario: #4A4660;
+  --borda: #D9D3E8;
+  --lilas: #5B3FB0;
+  --lilas-escuro: #3A2A78;
+  --lilas-claro: #EEE8FA;
+  --remedios: #2E7D4F;
+  --registrado: #1F5E3A;
+  --consultas: #2563A8;
+  --emergencia: #B91C1C;
+  --emergencia-texto: #991B1B;
+  --emergencia-fundo: #FDF1F1;
+  --ajustes: #4B5563;
+  --pendente-fundo: #FDF3D6;
+  --pendente-borda: #C99A1E;
+  --pendente-texto: #5C4300;
+  --erro: #92400E;
+  --erro-borda: #B45309;
+
+  /* Tamanho base da letra. Ajustes (A− e A+) vão mudar este valor. */
+  --tamanho-base: 20px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  font-size: var(--tamanho-base);
+  line-height: 1.4;
+}
+
+.tela {
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 { margin: 0; font-size: 1.5em; font-weight: 800; }
+
+/* Texto de apoio: nunca menor que 18 px (RNF01). */
+.apoio { margin: 0; font-size: max(18px, 0.9em); color: var(--texto-secundario); }
+
+/* Botão principal (lilás). Área de toque grande (RNF05). */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--lilas);
+  color: #FFFFFF;
+  font: inherit;
+  font-size: 1.15em;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Botão de contorno (Cancelar, Lembrar mais tarde...). */
+.botao-contorno {
+  background: var(--superficie);
+  color: var(--texto);
+  border: 2px solid var(--texto-secundario);
+}
+
+/* Botão Ouvir: sempre com ícone e texto (RNF14). */
+.botao-ouvir {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--lilas);
+  border-radius: 24px;
+  background: var(--superficie);
+  color: var(--lilas-escuro);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Foco bem visível para quem navega pelo teclado ou leitor de tela. */
+:focus-visible { outline: 4px solid var(--lilas); outline-offset: 3px; }
+
+.mensagem {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--superficie);
+  border: 2px solid var(--borda);
+  font-size: 18px;
+}
+
+/* ---------- Componentes das telas do app ---------- */
+
+.topo { display: flex; justify-content: space-between; align-items: center; }
+.topo-direita { justify-content: flex-end; }
+
+.botao-voltar {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 48px; padding: 0 16px 0 10px; border-radius: 24px;
+  background: var(--lilas-claro); color: var(--lilas-escuro);
+  font-size: 18px; font-weight: 700; text-decoration: none;
+}
+
+.saudacao { display: flex; align-items: center; gap: 16px; }
+.saudacao img { width: 88px; height: 88px; border-radius: 44px; object-fit: cover; border: 3px solid var(--lilas-claro); }
+
+.resumo {
+  display: flex; align-items: center; gap: 14px; padding: 16px 18px;
+  border-radius: 16px; color: var(--texto); text-decoration: none;
+}
+.resumo-pendente { background: var(--pendente-fundo); border: 2px solid var(--pendente-borda); }
+.resumo-ok { background: #E5F4E4; border: 2px solid #8CC49A; }
+.resumo strong { display: block; font-size: 1.05em; }
+
+.menu { display: flex; flex-direction: column; gap: 14px; }
+.menu a {
+  display: flex; align-items: center; gap: 18px; min-height: 84px; padding: 0 24px;
+  border-radius: 20px; color: #FFFFFF; font-size: 1.25em; font-weight: 800; text-decoration: none;
+}
+.menu-remedios { background: var(--remedios); }
+.menu-consultas { background: var(--consultas); }
+.menu-emergencia { background: var(--emergencia); }
+.menu-ajustes { background: var(--ajustes); }
+
+.lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.cartao {
+  display: flex; flex-direction: column; gap: 10px; padding: 16px 18px;
+  border-radius: 16px; background: var(--superficie); border: 2px solid var(--borda);
+}
+.cartao-pendente { background: var(--pendente-fundo); border-color: var(--pendente-borda); }
+.cartao-link { display: flex; align-items: center; gap: 12px; color: var(--texto); text-decoration: none; }
+.cartao-nome { flex: 1; font-size: 1.05em; font-weight: 800; }
+.cartao-hora { font-weight: 700; }
+
+.miniatura {
+  width: 48px; height: 48px; flex-shrink: 0; border-radius: 10px; overflow: hidden;
+  background: #F3F0FA; border: 1px solid var(--borda); color: var(--lilas);
+  display: flex; align-items: center; justify-content: center;
+}
+.miniatura img { width: 100%; height: 100%; object-fit: cover; }
+
+.situacao { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 18px; font-weight: 700; }
+.situacao-registrado { color: var(--registrado); }
+.situacao-pendente { color: var(--pendente-texto); }
+.situacao-proximo { color: var(--texto-secundario); }
+
+.botao-verde { background: var(--remedios); }
+.botao-cinza { background: var(--superficie); color: var(--texto); border: 2px solid var(--ajustes); }
+.botao-pequeno { min-height: 52px; font-size: 1em; }
+
+.campo { display: flex; flex-direction: column; gap: 8px; }
+.campo label { font-size: 1.05em; font-weight: 800; }
+.campo input[type="text"], .campo input[type="time"] {
+  min-height: 60px; padding: 0 18px; border: 2px solid var(--texto-secundario); border-radius: 14px;
+  background: #FFFFFF; color: var(--texto); font: inherit; font-size: 1.1em;
+}
+.campo input[aria-invalid="true"] { border: 3px solid var(--erro-borda); }
+.erro { margin: 0; font-size: 18px; font-weight: 700; color: var(--erro); }
+.erro:empty { display: none; }
+.aviso-repetido { padding: 14px 16px; border-radius: 14px; background: #FDF3D6; border: 2px solid var(--pendente-borda); }
+.aviso-repetido[hidden] { display: none; }
+
+.visualmente-oculto {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+.botao-foto {
+  display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px;
+  border: 2px dashed var(--lilas); border-radius: 14px; background: #FFFFFF;
+  color: var(--lilas-escuro); font-size: 19px; font-weight: 700; cursor: pointer;
+}
+.campo input[type="file"]:focus-visible + .botao-foto { outline: 4px solid var(--lilas); outline-offset: 3px; }
+.foto-previa { width: 120px; height: 120px; border-radius: 16px; object-fit: cover; border: 2px solid var(--borda); }
+.foto-previa[hidden] { display: none; }
+
+.acoes { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+
+/* Aviso de remédio em tela cheia */
+.aviso-fundo {
+  position: fixed; inset: 0; z-index: 50; overflow: auto;
+  display: flex; justify-content: center; background: var(--pendente-fundo);
+}
+.aviso {
+  width: 100%; max-width: 480px; padding: 32px 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;
+}
+.aviso-imagem {
+  width: 150px; height: 150px; border-radius: 24px; overflow: hidden;
+  background: #FFFFFF; border: 4px solid var(--pendente-borda); color: #7A5A00;
+  display: flex; align-items: center; justify-content: center;
+}
+.aviso-imagem img { width: 100%; height: 100%; object-fit: cover; }
+.aviso h2 { margin: 0; font-size: 1.7em; font-weight: 800; }
+.aviso-nome { margin: 0; font-size: 1.3em; font-weight: 700; }
+.aviso .botao { width: 100%; }
+
+/* Pergunta de confirmação */
+.dialogo-fundo {
+  position: fixed; inset: 0; z-index: 60; padding: 20px;
+  display: flex; align-items: center; justify-content: center; background: rgba(36, 32, 58, 0.55);
+}
+.dialogo {
+  width: 100%; max-width: 440px; padding: 24px 20px; border-radius: 20px;
+  display: flex; flex-direction: column; gap: 12px; background: #FFFFFF;
+}
+.dialogo h2 { margin: 0; font-size: 1.25em; }
+.dialogo p { margin: 0; }
+
+/* Mensagem flutuante (ex.: "Remédio registrado. Desfazer") */
+.mensagem-flutuante {
+  position: fixed; left: 50%; bottom: 20px; z-index: 70; transform: translateX(-50%);
+  width: calc(100% - 40px); max-width: 440px; padding: 14px 16px; border-radius: 16px;
+  display: flex; align-items: center; gap: 12px; background: var(--texto); color: #FFFFFF; font-size: 18px;
+}
+.mensagem-flutuante p { margin: 0; flex: 1; }
+.mensagem-flutuante button {
+  min-height: 48px; padding: 0 16px; border: 2px solid #FFFFFF; border-radius: 12px;
+  background: transparent; color: #FFFFFF; font: inherit; font-weight: 800; cursor: pointer;
+}
